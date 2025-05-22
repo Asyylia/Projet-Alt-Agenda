@@ -1,0 +1,61 @@
+main {
+  #pageco {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    .divco {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 504px;
+      height: 450px;
+      background-color: #f0cd8c;
+      border-radius: 27px;
+      text-align: center;
+      border: solid 3px #f4a159;
+      .form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        .email {
+          height: 1.7rem;
+          width: 447px;
+          background-color: #f7dfae;
+          border: 3px solid #cab673;
+          border-radius: 19px;
+        }
+        .mdp {
+          height: 1.7rem;
+          width: 447px;
+          background-color: #f7dfae;
+          border: 3px solid #cab673;
+          border-radius: 19px;
+        }
+        .divcheck {
+          display: flex;
+          gap: 10px;
+        }
+        .btnco {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 57px;
+          width: 203px;
+          border: none;
+          background-color: #e96a25;
+          color: white;
+          border-radius: 19px;
+          .seco {
+            color: white;
+            font-family: "League Spartan";
+            font-weight: 600;
+            font-size: 30px;
+          }
+        }
+      }
+    }
+  }
+}

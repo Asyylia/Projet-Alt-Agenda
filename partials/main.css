@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Rubik+Distressed&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Rubik+Distressed&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Rubik+Distressed&display=swap");
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body header {
+  display: flex;
+  justify-content: space-between;
+}
+* {
+  font-family: "league spartan";
+  color: black;
+  font-size: 30px;
+}
+* h1 {
+  font-size: 50px;
+  font-weight: 600;
+}
+* p {
+  font-size: 20px;
+}
+
+body {
+  background-image: url("../images/background.png");
+}
+
+main #pageco {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+}
+main #pageco .divco {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 504px;
+  height: 450px;
+  background-color: #f0cd8c;
+  border-radius: 27px;
+  text-align: center;
+  border: solid 3px #f4a159;
+}
+main #pageco .divco .form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+main #pageco .divco .form .email {
+  height: 1.7rem;
+  width: 447px;
+  background-color: #f7dfae;
+  border: 3px solid #cab673;
+  border-radius: 19px;
+}
+main #pageco .divco .form .mdp {
+  height: 1.7rem;
+  width: 447px;
+  background-color: #f7dfae;
+  border: 3px solid #cab673;
+  border-radius: 19px;
+}
+main #pageco .divco .form .divcheck {
+  display: flex;
+  gap: 10px;
+}
+main #pageco .divco .form .btnco {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 57px;
+  width: 203px;
+  border: none;
+  background-color: #e96a25;
+  color: white;
+  border-radius: 19px;
+}
+main #pageco .divco .form .btnco .seco {
+  color: white;
+  font-family: "League Spartan";
+  font-weight: 600;
+  font-size: 30px;
+}

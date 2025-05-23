@@ -20,14 +20,14 @@ main {
         flex-direction: column;
         align-items: center;
         gap: 10px;
-        .email {
+        #email {
           height: 1.7rem;
           width: 447px;
           background-color: #f7dfae;
           border: 3px solid #cab673;
           border-radius: 19px;
         }
-        .mdp {
+        #mdp {
           height: 1.7rem;
           width: 447px;
           background-color: #f7dfae;

@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Rubik+Distressed&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Rubik+Distressed&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Rubik+Distressed&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Rubik+Distressed&display=swap");
 body {
   box-sizing: border-box;
   padding: 0;
@@ -51,14 +52,14 @@ main #pageco .divco .form {
   align-items: center;
   gap: 10px;
 }
-main #pageco .divco .form .email {
+main #pageco .divco .form #email {
   height: 1.7rem;
   width: 447px;
   background-color: #f7dfae;
   border: 3px solid #cab673;
   border-radius: 19px;
 }
-main #pageco .divco .form .mdp {
+main #pageco .divco .form #mdp {
   height: 1.7rem;
   width: 447px;
   background-color: #f7dfae;
@@ -85,4 +86,44 @@ main #pageco .divco .form .btnco .seco {
   font-family: "League Spartan";
   font-weight: 600;
   font-size: 30px;
+}
+
+.cookie-container {
+  background: linear-gradient(260deg, #9b6c50 0%, #4f2626 100%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  display: flex;
+  width: 30rem;
+  height: 10rem;
+  border-radius: 1.2rem;
+  padding: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "League Spartan";
+  font-style: normal;
+}
+.cookie-container .logo-cookie {
+  width: 250px;
+}
+.cookie-container .text {
+  width: 70%;
+}
+.cookie-container .text .cookie-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.cookie-container .text .cookie-subtitle {
+  padding: 0.5rem 0rem;
+}
+.cookie-container .text .button {
+  border-style: none;
+  padding: 0.5rem 1rem;
+  color: #4f2626;
+  font-size: 0.7rem;
+  border-radius: 0.4rem;
+  font-family: "League Spartan";
+  cursor: pointer;
 }

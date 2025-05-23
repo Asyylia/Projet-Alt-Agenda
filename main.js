@@ -25,8 +25,6 @@ class App {
   }
 
   renderStep() {
-    this.container.innerHTML = "";
-
     switch (this.currentStep) {
       case 1:
         this.formulaire(); // page de connexion
@@ -41,6 +39,14 @@ class App {
     const pagedeco = document.createElement("div");
     pagedeco.classList.add("divco");
 
+    const cookies = Object.fromEntries(
+      // à partir des cookies, sépare le contenu une première fois "; " et une deuxième fois "=" ce qui nous donne l'intitulé de la propriété et son contenu
+      document.cookie.split("; ").map((c) => c.split("="))
+    );
+    // si
+    const savedEmail = cookies.email ? decodeURIComponent(cookies.email) : "";
+    const savedMdp = cookies.mdp ? decodeURIComponent(cookies.mdp) : "";
+
     const connexionh1 = document.createElement("h1");
     connexionh1.textContent = "Connexion";
 
@@ -48,13 +54,15 @@ class App {
     formulaire.classList.add("form");
 
     const email = document.createElement("input");
-    email.classList.add("email");
+    email.setAttribute("id", "inputEmail")
     email.setAttribute("placeholder", "Adresse e-mail");
+    email.setAttribute("value", savedEmail);
 
     const mdp = document.createElement("input");
-    mdp.classList.add("mdp");
+    mdp.setAttribute("id", "inputMdp");
     mdp.setAttribute("placeholder", "Mot de passe");
     mdp.setAttribute("type", "password");
+    mdp.setAttribute("value", savedMdp);
 
     const divcheck = document.createElement("div");
     divcheck.classList.add("divcheck");
@@ -62,6 +70,7 @@ class App {
     const check = document.createElement("input");
     check.classList.add("check");
     check.setAttribute("type", "checkbox");
+    check.setAttribute("name", "checked");
 
     const remember = document.createElement("p");
     remember.classList.add("remember");
@@ -75,7 +84,7 @@ class App {
     seco.classList.add("seco");
     seco.textContent = "Se connecter";
 
-    pageco.appendChild(pagedeco);
+
     pagedeco.appendChild(connexionh1);
     pagedeco.appendChild(formulaire);
 
@@ -90,19 +99,37 @@ class App {
 
     this.container.appendChild(pagedeco);
 
-    document.getElementById("btnco").addEventListener("click", () => {
+    btnco.addEventListener("click", (event) => {
+      event.preventDefault();
+      const checkedbox = document.querySelector('input[name=checked]').checked;
+      const inputEmail = document.querySelector("#inputEmail").value;
+      const inputMdp = document.querySelector("#inputMdp").value;
+
       this.listofusers.forEach((user) => {
-        if (this.checkLogin(user.email, user.mdp) == true) {
-          this.mainuser = user;
-          this.currentStep = 2;
-          this.renderStep();
-          console.log(user)
-        } else {
-          console.log("loupé");
+        // console.log(user)
+        let state = false;
+        if (state == false) {
+          if (this.checkLogin(user.email, user.mdp, inputEmail, inputMdp) === true) {
+            console.log(inputEmail)
+            console.log(inputMdp)
+            if (checkedbox) {
+              document.cookie = `email=${encodeURIComponent(inputEmail)}; max-age=${7 * 24 * 60 * 60}`;
+              document.cookie = `mdp=${encodeURIComponent(inputMdp)}; max-age=${7 * 24 * 60 * 60}`;
+            }
+            this.mainuser = user;
+            this.currentStep = 2;
+            this.renderStep();
+            console.log(user);
+            state = true;
+            return;
+          }
         }
+
       });
+
     });
-    return pagedeco;
+
+
   }
 
   connect() {
@@ -128,15 +155,15 @@ class App {
     this.container.appendChild(pagedeco);
   }
 
-  checkLogin(email, mdp) {
+  checkLogin(email, mdp, inputEmail, inputMdp) {
     let state = false;
 
-    let inputEmail = document.querySelector(".email");
-    let inputMdp = document.querySelector(".mdp");
     if (inputEmail && inputMdp) {
-      if (email == inputEmail.value && mdp == inputMdp.value) {
+      if (email == inputEmail && mdp == inputMdp) {
         state = true;
+        console.log("reussi")
         return state;
+
       } else {
         console.log("mot de passe incorrect");
       }

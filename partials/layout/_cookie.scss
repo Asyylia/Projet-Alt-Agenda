@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Rubik+Distressed&display=swap");
 
-#cookie-container {
+.cookie-container {
   background: linear-gradient(260deg, #9b6c50 0%, #4f2626 100%);
   position: absolute;
   top: 50%;
@@ -35,6 +35,7 @@
       font-size: 0.7rem;
       border-radius: 0.4rem;
       font-family: "League Spartan";
+      cursor: pointer;
     }
   }
 }

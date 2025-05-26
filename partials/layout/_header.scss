@@ -17,3 +17,19 @@
     }
   }
 }
+
+@media screen and (max-width: 1000px) {
+  #idheader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 100px;
+    .logo {
+      width: 250px;
+    }
+    .nav {
+      display: none;
+    }
+  }
+}

@@ -28,15 +28,20 @@ class App {
   renderStep() {
     switch (this.currentStep) {
       case 1:
+        this.createHeader();
+        this.createFooter();
+      case 2:
         this.formulaire(); // page de connexion
         break;
-      case 2:
+      case 3:
         this.connect(); //validation connexion
         break;
+
     }
   }
 
   formulaire() {
+    this.container.innerHTML = "";
     const pagedeco = document.createElement("div");
     pagedeco.classList.add("divco");
 
@@ -117,7 +122,7 @@ class App {
             document.cookie = `mdp=${encodeURIComponent(inputMdp)}; max-age=${7 * 24 * 60 * 60}`;
           }
           this.mainuser = user;
-          this.currentStep = 2;
+          this.currentStep = 3;
           this.renderStep();
           isAuthentificated = true;
           break;
@@ -130,9 +135,6 @@ class App {
     });
 
   };
-
-
-
 
   connect() {
     this.container.innerHTML = "";
@@ -172,45 +174,183 @@ class App {
       return state;
     }
   }
+
+
+  inscription() {
+    this.container.innerHTML = "";
+    const fondinscription = document.getElementById('inscription')
+
+    const titreinscription = document.createElement('h1')
+    titreinscription.textContent = "Inscription"
+
+    const col1 = document.createElement('div')
+    col1.classList.add('col')
+
+    const col2 = document.createElement('div')
+    col2.classList.add('col')
+
+    const userinscription = document.createElement('input')
+    userinscription.classList.add('caseinscription')
+    userinscription.setAttribute("placeholder", "Pseudo");
+
+    const mailinscription = document.createElement('input')
+    mailinscription.classList.add('caseinscription')
+    mailinscription.setAttribute("placeholder", "Adresse e-mail");
+
+    const mdpinscription = document.createElement('input')
+    mdpinscription.classList.add('caseinscription')
+    mdpinscription.setAttribute("placeholder", "Mot de passe");
+
+    const birthinscription = document.createElement('input')
+    birthinscription.classList.add('caseinscription')
+    birthinscription.setAttribute("placeholder", "Date de naissance");
+
+    const adresseinscription = document.createElement('input')
+    adresseinscription.classList.add('caseinscription')
+    adresseinscription.setAttribute("placeholder", "Adresse");
+
+    const cpinscription = document.createElement('input')
+    cpinscription.classList.add('caseinscription')
+    cpinscription.setAttribute("placeholder", "Code postal");
+
+    const villeinscription = document.createElement('input')
+    villeinscription.classList.add('caseinscription')
+    villeinscription.setAttribute("placeholder", "Ville");
+
+    const regioninscription = document.createElement('input')
+    regioninscription.classList.add('caseinscription')
+    regioninscription.setAttribute("placeholder", "Région / Département");
+
+    const btninscription = document.createElement("button");
+    btninscription.classList.add("btninscription");
+    btninscription.setAttribute("id", "btnco");
+
+    const sinscrire = document.createElement("p");
+    sinscrire.classList.add("sinscrire");
+    sinscrire.textContent = "S'inscrire";
+
+    fondinscription.appendChild(titreinscription)
+    fondinscription.appendChild(col1)
+    fondinscription.appendChild(col2)
+    col1.appendChild(userinscription)
+    col1.appendChild(mailinscription)
+    col1.appendChild(mdpinscription)
+    col1.appendChild(birthinscription)
+    col2.appendChild(adresseinscription)
+    col2.appendChild(cpinscription)
+    col2.appendChild(villeinscription)
+    col2.appendChild(regioninscription)
+    fondinscription.appendChild(btninscription)
+    btninscription.appendChild(sinscrire)
+
+  }
+  createHeader() {
+    let header = document.getElementById('idheader')
+
+    const logo = document.createElement('img')
+    logo.src = "images/logo.png";
+    logo.classList.add("logo");
+    logo.setAttribute("href", "#")
+
+    let nav = document.createElement('div')
+    nav.classList.add('nav')
+
+    let inscription = document.createElement('a')
+    inscription.classList.add("navbar-titre")
+    inscription.textContent = "Inscription"
+    inscription.setAttribute("href", "#")
+    inscription.addEventListener('click', () => {
+      this.inscription()
+    })
+
+
+    let connexion = document.createElement('a')
+    connexion.classList.add('navbar-titre')
+    connexion.textContent = "Connexion"
+    connexion.setAttribute("href", "#")
+    connexion.addEventListener('click', () => {
+      this.formulaire()
+    })
+
+    const loupe = document.createElement('img')
+    loupe.src = "./images/loupe-search-svgrepo-com.png";
+    loupe.classList.add('emoticone-header');
+
+    const panier = document.createElement('img')
+    panier.src = "images/shopping-basket-supermarket-svgrepo-com.png";
+    panier.classList.add('emoticone-header');
+
+
+    header.appendChild(logo);
+    header.appendChild(nav)
+    nav.appendChild(inscription);
+    nav.appendChild(connexion);
+    nav.appendChild(loupe)
+    nav.appendChild(panier)
+
+
+  }
+
+  createFooter() {
+    const footer = document.getElementById("footer")
+
+    const menubas = document.createElement('div')
+    menubas.classList.add('menubas')
+
+    const aPropos = document.createElement("p")
+    aPropos.classList.add('apropos')
+    aPropos.textContent = 'À propos'
+
+    const contact = document.createElement("p")
+    contact.classList.add('contact')
+    contact.textContent = 'Nous contacter'
+
+    const mentions = document.createElement("p")
+    mentions.classList.add('mentions')
+    mentions.textContent = 'Informations légales'
+
+    const sociaux = document.createElement('div')
+    sociaux.classList.add("sociaux")
+
+    const facebooklogo = document.createElement('img')
+    facebooklogo.src = ('images/facebook-svgrepo-com.png')
+    facebooklogo.classList.add('logosociaux')
+
+    // const facebook = document.createElement("a")
+    // facebook.setAttribute('href', 'facebook.com')
+
+    const instalogo = document.createElement('img')
+    instalogo.src = ('images/instagram-svgrepo-com.png')
+    instalogo.classList.add('logosociaux')
+
+    // const insta = document.createElement("a")
+    // insta.href('instagram.com')
+
+    const twitterlogo = document.createElement('img')
+    twitterlogo.src = ('images/twitter-svgrepo-com.png')
+    twitterlogo.classList.add('logosociaux')
+
+    // const twitter = document.createElement("a")
+    // twitter.href('twitter.com')
+
+    footer.appendChild(menubas)
+    footer.appendChild(sociaux)
+    menubas.appendChild(aPropos)
+    menubas.appendChild(contact)
+    menubas.appendChild(mentions)
+    sociaux.appendChild(facebooklogo)
+    // facebooklogo.appendChild(facebook)
+    sociaux.appendChild(instalogo)
+    // facebooklogo.appendChild('insta')
+    sociaux.appendChild(twitterlogo)
+    // facebooklogo.appendChild('twitter')
+  }
 }
 
 new App("pageco");
 
-function createHeader() {
-  let header = document.getElementById('idheader')
-
-  const logo = document.createElement('img')
-  logo.src = "images/logo.png";
-  logo.classList.add("logo");
-
-  let nav = document.createElement('div')
-  nav.classList.add('nav')
-
-  let inscription = document.createElement('p')
-  inscription.classList.add("navbar-titre")
-  inscription.textContent = "Inscription"
-
-  let connexion = document.createElement('p')
-  connexion.classList.add('navbar-titre')
-  connexion.textContent = "Connexion"
-
-  const loupe = document.createElement('img')
-  loupe.src = "./images/loupe-search-svgrepo-com.png";
-  loupe.classList.add('emoticone-header');
-
-  const panier = document.createElement('img')
-  panier.src = "images/shopping-basket-supermarket-svgrepo-com.png";
-  panier.classList.add('emoticone-header');
 
 
-  header.appendChild(logo);
-  header.appendChild(nav)
-  nav.appendChild(inscription);
-  nav.appendChild(connexion);
-  nav.appendChild(loupe)
-  nav.appendChild(panier)
 
 
-}
 
-createHeader();

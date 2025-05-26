@@ -32,7 +32,7 @@ main #pageco {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 main #pageco .divco {
   display: flex;
@@ -106,6 +106,84 @@ main #pageco .divco .form .btnco .seco {
   font-size: 25px;
 }
 
+@media screen and (max-width: 1000px) {
+  main #pageco {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  main #pageco .divco {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 400px;
+    background-color: #f0cd8c;
+    border-radius: 27px;
+    text-align: center;
+    border: solid 3px #f4a159;
+  }
+  main #pageco .divco .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  main #pageco .divco .form #inputEmail {
+    height: 1.7rem;
+    width: 250px;
+    background-color: #f7dfae;
+    border: 3px solid #cab673;
+    border-radius: 19px;
+  }
+  main #pageco .divco .form #inputMdp {
+    height: 1.7rem;
+    width: 250px;
+    background-color: #f7dfae;
+    border: 3px solid #cab673;
+    border-radius: 19px;
+  }
+  main #pageco .divco .form .divcheck {
+    display: flex;
+    gap: 10px;
+  }
+  main #pageco .divco .form .btnco {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 57px;
+    width: 203px;
+    border: none;
+    background-color: #e96a25;
+    color: white;
+    border-radius: 19px;
+  }
+  main #pageco .divco .form .btnco .seco {
+    color: white;
+    font-family: "League Spartan";
+    font-weight: 600;
+    font-size: 30px;
+  }
+  .btnaccueil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 57px;
+    width: 203px;
+    border: none;
+    background-color: #e96a25;
+    color: white;
+    border-radius: 19px;
+  }
+  .btnaccueil .accueil {
+    color: white;
+    font-family: "League Spartan";
+    font-weight: 600;
+    font-size: 25px;
+  }
+}
 .cookie-container {
   background: linear-gradient(260deg, #9b6c50 0%, #4f2626 100%);
   position: absolute;
@@ -164,4 +242,97 @@ main #pageco .divco .form .btnco .seco {
 #idheader .nav .emoticone-header {
   width: 47px;
   height: 47px;
+}
+
+@media screen and (max-width: 1000px) {
+  #idheader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 100px;
+  }
+  #idheader .logo {
+    width: 250px;
+  }
+  #idheader .nav {
+    display: none;
+  }
+}
+#footer {
+  background-color: #f7dfae;
+  border: 1px, solid, #cab673;
+  margin-top: 70px;
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+  height: 124px;
+}
+#footer .menubas {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#footer .menubas .apropos {
+  font-size: 30px;
+  margin: 0;
+  margin-top: 15px;
+}
+#footer .menubas .contact {
+  font-size: 30px;
+  margin: 0;
+}
+#footer .menubas .mentions {
+  font-size: 30px;
+  margin: 0;
+  margin-bottom: 15px;
+}
+#footer .sociaux {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#footer .sociaux .logosociaux {
+  height: 45px;
+  width: 45px;
+}
+
+@media screen and (max-width: 1000px) {
+  #footer {
+    background-color: #f7dfae;
+    border: 1px, solid, #cab673;
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-around;
+    width: 100vw;
+    height: 130px;
+  }
+  #footer .menubas {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+  }
+  #footer .menubas .apropos {
+    font-size: 20px !important;
+    margin: 0;
+    margin-top: 15px;
+  }
+  #footer .menubas .contact {
+    font-size: 20px !important;
+    margin: 0;
+  }
+  #footer .menubas .mentions {
+    font-size: 20px !important;
+    margin: 0;
+  }
+  #footer .sociaux {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  #footer .sociaux .logosociaux {
+    height: 45px;
+    width: 45px;
+  }
 }

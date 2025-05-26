@@ -3,7 +3,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 4rem;
+    margin-top: 2rem;
     .divco {
       display: flex;
       flex-direction: column;
@@ -75,5 +75,87 @@ main {
     font-family: "League Spartan";
     font-weight: 600;
     font-size: 25px;
+  }
+}
+// -------------------------------------------------------------
+@media screen and (max-width: 1000px) {
+  main {
+    #pageco {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
+      .divco {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
+        height: 400px;
+        background-color: #f0cd8c;
+        border-radius: 27px;
+        text-align: center;
+        border: solid 3px #f4a159;
+        .form {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+          #inputEmail {
+            height: 1.7rem;
+            width: 250px;
+            background-color: #f7dfae;
+            border: 3px solid #cab673;
+            border-radius: 19px;
+          }
+          #inputMdp {
+            height: 1.7rem;
+            width: 250px;
+            background-color: #f7dfae;
+            border: 3px solid #cab673;
+            border-radius: 19px;
+          }
+          .divcheck {
+            display: flex;
+            gap: 10px;
+          }
+          .btnco {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 57px;
+            width: 203px;
+            border: none;
+            background-color: #e96a25;
+            color: white;
+            border-radius: 19px;
+            .seco {
+              color: white;
+              font-family: "League Spartan";
+              font-weight: 600;
+              font-size: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .btnaccueil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 57px;
+    width: 203px;
+    border: none;
+    background-color: #e96a25;
+    color: white;
+    border-radius: 19px;
+    .accueil {
+      color: white;
+      font-family: "League Spartan";
+      font-weight: 600;
+      font-size: 25px;
+    }
   }
 }

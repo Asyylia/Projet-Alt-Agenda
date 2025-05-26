@@ -25,6 +25,8 @@ body header {
 }
 
 body {
+  width: 100vw;
+  height: 100vh;
   background-image: url("../images/background.png");
 }
 
@@ -53,6 +55,7 @@ main #pageco .divco .form {
   gap: 10px;
 }
 main #pageco .divco .form #inputEmail {
+  text-align: center;
   height: 1.7rem;
   width: 447px;
   background-color: #f7dfae;
@@ -60,6 +63,7 @@ main #pageco .divco .form #inputEmail {
   border-radius: 19px;
 }
 main #pageco .divco .form #inputMdp {
+  text-align: center;
   height: 1.7rem;
   width: 447px;
   background-color: #f7dfae;
@@ -231,15 +235,27 @@ main #pageco .divco .form .btnco .seco {
   justify-content: space-around;
   gap: 100px;
 }
-#idheader .nav {
+#idheader .divnav {
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+}
+#idheader .divnav .annonce {
+  display: flex;
+  justify-content: right;
+  padding: 5px;
+  text-decoration: none;
+}
+#idheader .divnav .nav {
   display: flex;
   gap: 30px;
 }
-#idheader .nav .navbar-titre {
+#idheader .divnav .nav .navbar-titre {
   font-family: "League Spartan";
   font-size: 30px;
+  text-decoration: none;
 }
-#idheader .nav .emoticone-header {
+#idheader .divnav .nav .emoticone-header {
   width: 47px;
   height: 47px;
 }
@@ -252,10 +268,16 @@ main #pageco .divco .form .btnco .seco {
     justify-content: space-around;
     gap: 100px;
   }
-  #idheader .logo {
+  #idheader .divnav .annonce {
+    display: none;
+    justify-content: right;
+    padding: 5px;
+    text-decoration: none;
+  }
+  #idheader .divnav .logo {
     width: 250px;
   }
-  #idheader .nav {
+  #idheader .divnav .nav {
     display: none;
   }
 }
@@ -264,9 +286,10 @@ main #pageco .divco .form .btnco .seco {
   border: 1px, solid, #cab673;
   margin-top: 70px;
   display: flex;
+  align-items: center;
   justify-content: space-around;
   width: 100vw;
-  height: 124px;
+  height: 5rem;
 }
 #footer .menubas {
   display: flex;
@@ -276,23 +299,26 @@ main #pageco .divco .form .btnco .seco {
 #footer .menubas .apropos {
   font-size: 30px;
   margin: 0;
-  margin-top: 15px;
 }
 #footer .menubas .contact {
   font-size: 30px;
   margin: 0;
+  text-decoration: none;
 }
 #footer .menubas .mentions {
   font-size: 30px;
   margin: 0;
-  margin-bottom: 15px;
 }
 #footer .sociaux {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
 }
 #footer .sociaux .logosociaux {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 45px;
   width: 45px;
 }
@@ -304,13 +330,13 @@ main #pageco .divco .form .btnco .seco {
     margin-top: 70px;
     display: flex;
     justify-content: space-around;
+    align-items: baseline;
     width: 100vw;
-    height: 130px;
   }
   #footer .menubas {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     justify-content: center;
   }
   #footer .menubas .apropos {
@@ -321,6 +347,7 @@ main #pageco .divco .form .btnco .seco {
   #footer .menubas .contact {
     font-size: 20px !important;
     margin: 0;
+    text-decoration: none;
   }
   #footer .menubas .mentions {
     font-size: 20px !important;
@@ -328,11 +355,276 @@ main #pageco .divco .form .btnco .seco {
   }
   #footer .sociaux {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
   }
   #footer .sociaux .logosociaux {
     height: 45px;
     width: 45px;
+  }
+}
+.fondinscription {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f0cd8c;
+  border-radius: 25px;
+  width: 50rem;
+}
+.fondinscription h1 {
+  text-align: center;
+}
+.fondinscription .divcol {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+.fondinscription .divcol .col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.fondinscription .divcol .col .caseinscription {
+  background-color: #f7dfae;
+  border: 3px, solid, #cab673;
+  border-radius: 19px;
+  width: 20rem;
+  height: 2rem;
+  text-align: center;
+}
+.fondinscription .btninscription {
+  background-color: #e96a25;
+  border: none;
+  border-radius: 19px;
+  width: 12rem;
+  margin: 20px;
+}
+.fondinscription .btninscription .sinscrire {
+  color: white;
+}
+
+@media screen and (max-width: 1000px) {
+  .fondinscription {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f0cd8c;
+    border-radius: 25px;
+    width: 17rem;
+  }
+  .fondinscription h1 {
+    text-align: center;
+  }
+  .fondinscription .divcol {
+    display: flex;
+    flex-direction: column;
+  }
+  .fondinscription .divcol .col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .fondinscription .divcol .col .caseinscription {
+    background-color: #f7dfae;
+    border: 3px, solid, #cab673;
+    border-radius: 19px;
+    width: 15rem;
+    height: 2rem;
+    text-align: center;
+  }
+  .fondinscription .btninscription {
+    background-color: #e96a25;
+    border: none;
+    border-radius: 19px;
+    width: 12rem;
+    margin: 20px;
+  }
+  .fondinscription .btninscription .sinscrire {
+    color: white;
+  }
+}
+.divaccueil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.divaccueil .searchbar {
+  background-color: #f0cd8c;
+  border: 3px solid #f4a159;
+  border-radius: 27px;
+  width: 50rem;
+  height: 6rem;
+}
+.divaccueil .searchbar h1 {
+  margin-left: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.divaccueil .searchbar .dropdown {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.divaccueil .searchbar .dropdown .btncatdrop {
+  background-color: #f7dfae;
+  border-radius: 19px;
+  border: 3px solid #cab673;
+  width: 12rem;
+  height: 2rem;
+  gap: 10px;
+}
+.divaccueil .searchbar .dropdown .btnsearch {
+  background-color: #e96a25;
+  border-radius: 19px;
+  border: none;
+  color: white;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.divaccueil .divcat {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 20px;
+}
+.divaccueil .divcat .btndivcat1 {
+  background-color: #694973;
+  color: white;
+  border-radius: 30px;
+  border: none;
+  line-height: 60px;
+  font-family: "rubik distressed";
+  font-size: 32px;
+  width: 10rem;
+  height: 10rem;
+}
+.divaccueil .divcat .btndivcat2 {
+  background-color: #82bbbd;
+  color: white;
+  border-radius: 30px;
+  border: none;
+  line-height: 60px;
+  font-family: "rubik distressed";
+  font-size: 32px;
+  width: 10rem;
+  height: 10rem;
+}
+.divaccueil .divcat .btndivcat3 {
+  background-color: #85ad79;
+  color: white;
+  border-radius: 30px;
+  border: none;
+  line-height: 60px;
+  font-family: "rubik distressed";
+  font-size: 32px;
+  width: 10rem;
+  height: 10rem;
+}
+.divaccueil .divcat .btndivcat4 {
+  background-color: #c55456;
+  color: white;
+  border-radius: 30px;
+  border: none;
+  line-height: 60px;
+  font-family: "rubik distressed";
+  font-size: 32px;
+  width: 10rem;
+  height: 10rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .divaccueil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .divaccueil .searchbar {
+    display: flex;
+    flex-direction: column;
+    background-color: #f0cd8c;
+    border: 3px solid #f4a159;
+    border-radius: 27px;
+    width: 15rem;
+    height: 15rem;
+  }
+  .divaccueil .searchbar h1 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .divaccueil .searchbar .dropdown {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+  .divaccueil .searchbar .dropdown .btncatdrop {
+    background-color: #f7dfae;
+    border-radius: 19px;
+    border: 3px solid #cab673;
+    width: 5rem;
+    height: 2rem;
+    gap: 10px;
+  }
+  .divaccueil .searchbar .dropdown .btnsearch {
+    background-color: #e96a25;
+    border-radius: 19px;
+    border: none;
+    color: white;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .divaccueil .divcat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 20px;
+  }
+  .divaccueil .divcat .btndivcat1 {
+    background-color: #694973;
+    color: white;
+    border-radius: 30px;
+    border: none;
+    line-height: 60px;
+    font-family: "rubik distressed";
+    font-size: 32px;
+    width: 10rem;
+    height: 10rem;
+  }
+  .divaccueil .divcat .btndivcat2 {
+    background-color: #82bbbd;
+    color: white;
+    border-radius: 30px;
+    border: none;
+    line-height: 60px;
+    font-family: "rubik distressed";
+    font-size: 32px;
+    width: 10rem;
+    height: 10rem;
+  }
+  .divaccueil .divcat .btndivcat3 {
+    background-color: #85ad79;
+    color: white;
+    border-radius: 30px;
+    border: none;
+    line-height: 60px;
+    font-family: "rubik distressed";
+    font-size: 32px;
+    width: 10rem;
+    height: 10rem;
+  }
+  .divaccueil .divcat .btndivcat4 {
+    background-color: #c55456;
+    color: white;
+    border-radius: 30px;
+    border: none;
+    line-height: 60px;
+    font-family: "rubik distressed";
+    font-size: 32px;
+    width: 10rem;
+    height: 10rem;
   }
 }

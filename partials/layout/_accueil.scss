@@ -1,0 +1,184 @@
+.divaccueil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .searchbar {
+    background-color: #f0cd8c;
+    border: 3px solid #f4a159;
+    border-radius: 27px;
+    width: 50rem;
+    height: 6rem;
+    h1 {
+      margin-left: 2rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    .dropdown {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      .btncatdrop {
+        background-color: #f7dfae;
+        border-radius: 19px;
+        border: 3px solid #cab673;
+        width: 12rem;
+        height: 2rem;
+        gap: 10px;
+      }
+      .btnsearch {
+        background-color: #e96a25;
+        border-radius: 19px;
+        border: none;
+        color: white;
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+    }
+  }
+
+  .divcat {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 20px;
+    .btndivcat1 {
+      background-color: #694973;
+      color: white;
+      border-radius: 30px;
+      border: none;
+      line-height: 60px;
+      font-family: "rubik distressed";
+      font-size: 32px;
+      width: 10rem;
+      height: 10rem;
+    }
+    .btndivcat2 {
+      background-color: #82bbbd;
+      color: white;
+      border-radius: 30px;
+      border: none;
+      line-height: 60px;
+      font-family: "rubik distressed";
+      font-size: 32px;
+      width: 10rem;
+      height: 10rem;
+    }
+    .btndivcat3 {
+      background-color: #85ad79;
+      color: white;
+      border-radius: 30px;
+      border: none;
+      line-height: 60px;
+      font-family: "rubik distressed";
+      font-size: 32px;
+      width: 10rem;
+      height: 10rem;
+    }
+    .btndivcat4 {
+      background-color: #c55456;
+      color: white;
+      border-radius: 30px;
+      border: none;
+      line-height: 60px;
+      font-family: "rubik distressed";
+      font-size: 32px;
+      width: 10rem;
+      height: 10rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .divaccueil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .searchbar {
+      display: flex;
+      flex-direction: column;
+      background-color: #f0cd8c;
+      border: 3px solid #f4a159;
+      border-radius: 27px;
+      width: 15rem;
+      height: 15rem;
+      h1 {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+      .dropdown {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        .btncatdrop {
+          background-color: #f7dfae;
+          border-radius: 19px;
+          border: 3px solid #cab673;
+          width: 5rem;
+          height: 2rem;
+          gap: 10px;
+        }
+        .btnsearch {
+          background-color: #e96a25;
+          border-radius: 19px;
+          border: none;
+          color: white;
+          padding-left: 40px;
+          padding-right: 40px;
+        }
+      }
+    }
+
+    .divcat {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-top: 30px;
+      gap: 20px;
+      .btndivcat1 {
+        background-color: #694973;
+        color: white;
+        border-radius: 30px;
+        border: none;
+        line-height: 60px;
+        font-family: "rubik distressed";
+        font-size: 32px;
+        width: 10rem;
+        height: 10rem;
+      }
+      .btndivcat2 {
+        background-color: #82bbbd;
+        color: white;
+        border-radius: 30px;
+        border: none;
+        line-height: 60px;
+        font-family: "rubik distressed";
+        font-size: 32px;
+        width: 10rem;
+        height: 10rem;
+      }
+      .btndivcat3 {
+        background-color: #85ad79;
+        color: white;
+        border-radius: 30px;
+        border: none;
+        line-height: 60px;
+        font-family: "rubik distressed";
+        font-size: 32px;
+        width: 10rem;
+        height: 10rem;
+      }
+      .btndivcat4 {
+        background-color: #c55456;
+        color: white;
+        border-radius: 30px;
+        border: none;
+        line-height: 60px;
+        font-family: "rubik distressed";
+        font-size: 32px;
+        width: 10rem;
+        height: 10rem;
+      }
+    }
+  }
+}

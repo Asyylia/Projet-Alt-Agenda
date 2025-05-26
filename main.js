@@ -29,7 +29,9 @@ class App {
     switch (this.currentStep) {
       case 1:
         this.createHeader();
+        this.accueil()
         this.createFooter();
+        break;
       case 2:
         this.formulaire(); // page de connexion
         break;
@@ -175,13 +177,185 @@ class App {
     }
   }
 
+  accueil() {
+    this.container.innerHTML = "";
+    const searchbar = document.createElement('div')
+    searchbar.classList.add('searchbar')
+
+    const titrebar = document.createElement('h1')
+    titrebar.textContent = "Rechercher des évènements"
+
+    const dropdown = document.createElement('div')
+    dropdown.classList.add('dropdown')
+
+    const btncatdrop = document.createElement('select')
+    btncatdrop.classList.add('btncatdrop')
+
+
+    const licat1 = document.createElement('option')
+    licat1.classList.add('licat')
+    licat1.value = "option1"
+    licat1.text = "Concerts / Évènements musicaux"
+
+    const licat2 = document.createElement('option')
+    licat2.classList.add('licat')
+    licat2.value = "option2"
+    licat2.text = "Conventions / Festival"
+
+    const licat3 = document.createElement('option')
+    licat3.classList.add('licat')
+    licat3.value = "option3"
+    licat3.text = "Jeux vidéos / E-sport"
+
+    const licat4 = document.createElement('option')
+    licat4.classList.add('licat')
+    licat4.value = "option4"
+    licat4.text = "Lifestyle"
+
+    const basedrop = document.createElement('option')
+    basedrop.textContent = "Catégorie"
+    basedrop.disabled = true
+    basedrop.selected = true
+    basedrop.value = ""
+
+    const btnlocdrop = document.createElement('select')
+    btnlocdrop.classList.add('btncatdrop')
+
+
+    const liloc1 = document.createElement('option')
+    liloc1.classList.add('licat')
+    liloc1.value = "option1"
+    liloc1.text = "Doubs"
+
+    const liloc2 = document.createElement('option')
+    liloc2.classList.add('licat')
+    liloc2.value = "option2"
+    liloc2.text = "Haute-Saône"
+
+    const liloc3 = document.createElement('option')
+    liloc3.classList.add('licat')
+    liloc3.value = "option3"
+    liloc3.text = "Jura"
+
+    const liloc4 = document.createElement('option')
+    liloc4.classList.add('licat')
+    liloc4.value = "option4"
+    liloc4.text = "Territoire de Belfort"
+
+    const basedroploc = document.createElement('option')
+    basedroploc.textContent = "Localisation"
+    basedroploc.disabled = true
+    basedroploc.selected = true
+    basedroploc.value = ""
+
+
+    const btndatedrop = document.createElement('select')
+    btndatedrop.classList.add('btncatdrop')
+
+
+    const lidate1 = document.createElement('option')
+    lidate1.classList.add('licat')
+    lidate1.value = "option1"
+    lidate1.text = "Cette semaine"
+
+    const lidate2 = document.createElement('option')
+    lidate2.classList.add('licat')
+    lidate2.value = "option2"
+    lidate2.text = "Ce week-end"
+
+    const lidate3 = document.createElement('option')
+    lidate3.classList.add('licat')
+    lidate3.value = "option3"
+    lidate3.text = "Ce mois-ci"
+
+    const lidate4 = document.createElement('option')
+    lidate4.classList.add('licat')
+    lidate4.value = "option4"
+    lidate4.text = "À venir"
+
+    const basedropdate = document.createElement('option')
+    basedropdate.textContent = "Date"
+    basedropdate.disabled = true
+    basedropdate.selected = true
+    basedropdate.value = ""
+
+    const btnsearch = document.createElement('button')
+    btnsearch.classList.add('btnsearch')
+    btnsearch.textContent = "Rechercher"
+
+    const divaccueil = document.createElement('div')
+    divaccueil.classList.add('divaccueil')
+
+    const divcat = document.createElement('div')
+    divcat.classList.add('divcat')
+
+    const divcat1 = document.createElement('button')
+    divcat1.classList.add('btndivcat1')
+    divcat1.textContent = "CONCERTS / ÉVENÈMENTS MUSICAUX"
+
+    const divcat2 = document.createElement('button')
+    divcat2.classList.add('btndivcat2')
+    divcat2.textContent = "CONVENTIONS / FESTIVAL"
+
+    const divcat3 = document.createElement('button')
+    divcat3.classList.add('btndivcat3')
+    divcat3.textContent = "JEUX VIDÉOS / E-SPORT"
+
+    const divcat4 = document.createElement('button')
+    divcat4.classList.add('btndivcat4')
+    divcat4.textContent = "LIFESTYLE"
+
+    divaccueil.appendChild(searchbar)
+    searchbar.appendChild(titrebar)
+    searchbar.appendChild(dropdown)
+
+    dropdown.appendChild(btncatdrop)
+    btncatdrop.appendChild(licat1)
+    btncatdrop.appendChild(licat2)
+    btncatdrop.appendChild(licat3)
+    btncatdrop.appendChild(licat4)
+    btncatdrop.appendChild(basedrop)
+
+    dropdown.appendChild(btnlocdrop)
+    btnlocdrop.appendChild(liloc1)
+    btnlocdrop.appendChild(liloc2)
+    btnlocdrop.appendChild(liloc3)
+    btnlocdrop.appendChild(liloc4)
+    btnlocdrop.appendChild(basedroploc)
+
+    dropdown.appendChild(btndatedrop)
+    btndatedrop.appendChild(lidate1)
+    btndatedrop.appendChild(lidate2)
+    btndatedrop.appendChild(lidate3)
+    btndatedrop.appendChild(lidate4)
+    btndatedrop.appendChild(basedropdate)
+
+    dropdown.appendChild(btnsearch)
+
+    divaccueil.appendChild(divcat)
+    divcat.appendChild(divcat1)
+    divcat.appendChild(divcat2)
+    divcat.appendChild(divcat3)
+    divcat.appendChild(divcat4)
+
+
+
+    this.container.appendChild(divaccueil)
+
+
+
+  }
 
   inscription() {
     this.container.innerHTML = "";
-    const fondinscription = document.getElementById('inscription')
+    const fondinscription = document.createElement('div')
+    fondinscription.classList.add('fondinscription')
 
     const titreinscription = document.createElement('h1')
     titreinscription.textContent = "Inscription"
+
+    const divcol = document.createElement('div')
+    divcol.classList.add('divcol')
 
     const col1 = document.createElement('div')
     col1.classList.add('col')
@@ -229,9 +403,11 @@ class App {
     sinscrire.classList.add("sinscrire");
     sinscrire.textContent = "S'inscrire";
 
+    this.container.appendChild(fondinscription)
     fondinscription.appendChild(titreinscription)
-    fondinscription.appendChild(col1)
-    fondinscription.appendChild(col2)
+    fondinscription.appendChild(divcol)
+    divcol.appendChild(col1)
+    divcol.appendChild(col2)
     col1.appendChild(userinscription)
     col1.appendChild(mailinscription)
     col1.appendChild(mdpinscription)
@@ -250,7 +426,13 @@ class App {
     const logo = document.createElement('img')
     logo.src = "images/logo.png";
     logo.classList.add("logo");
+    logo.style.cursor = "pointer"
     logo.setAttribute("href", "#")
+    logo.addEventListener('click', () => {
+      this.accueil()
+    })
+    const divnav = document.createElement('div')
+    divnav.classList.add('divnav')
 
     let nav = document.createElement('div')
     nav.classList.add('nav')
@@ -281,17 +463,28 @@ class App {
     panier.classList.add('emoticone-header');
 
 
+    const annonce = document.createElement('a')
+    annonce.classList.add('annonce')
+    annonce.textContent = "Déposer votre annonce"
+    annonce.setAttribute("href", "#")
+    annonce.addEventListener('click', () => {
+      this.formulaire()
+    })
+
     header.appendChild(logo);
-    header.appendChild(nav)
+    header.appendChild(divnav)
+    divnav.appendChild(nav)
     nav.appendChild(inscription);
     nav.appendChild(connexion);
     nav.appendChild(loupe)
     nav.appendChild(panier)
+    divnav.appendChild(annonce)
 
 
   }
 
   createFooter() {
+    let $emailUser = "mezza@gmail.com";
     const footer = document.getElementById("footer")
 
     const menubas = document.createElement('div')
@@ -301,8 +494,9 @@ class App {
     aPropos.classList.add('apropos')
     aPropos.textContent = 'À propos'
 
-    const contact = document.createElement("p")
+    const contact = document.createElement("a")
     contact.classList.add('contact')
+    contact.setAttribute("href", "mailto:" + $emailUser + "?subject=Prise de contact&body=J'aimerais faire votre connaissance!")
     contact.textContent = 'Nous contacter'
 
     const mentions = document.createElement("p")
@@ -313,21 +507,21 @@ class App {
     sociaux.classList.add("sociaux")
 
     const facebooklogo = document.createElement('img')
-    facebooklogo.src = ('images/facebook-svgrepo-com.png')
+    facebooklogo.src = ('images/facebook-svgrepo-com 2.png')
     facebooklogo.classList.add('logosociaux')
 
     // const facebook = document.createElement("a")
     // facebook.setAttribute('href', 'facebook.com')
 
     const instalogo = document.createElement('img')
-    instalogo.src = ('images/instagram-svgrepo-com.png')
+    instalogo.src = ('images/instagram-svgrepo-com 1.png')
     instalogo.classList.add('logosociaux')
 
     // const insta = document.createElement("a")
     // insta.href('instagram.com')
 
     const twitterlogo = document.createElement('img')
-    twitterlogo.src = ('images/twitter-svgrepo-com.png')
+    twitterlogo.src = ('images/twitter-svgrepo-com (1) 1.png')
     twitterlogo.classList.add('logosociaux')
 
     // const twitter = document.createElement("a")

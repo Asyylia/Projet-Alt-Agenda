@@ -1,0 +1,82 @@
+.fondinscription {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f0cd8c;
+  border-radius: 25px;
+  width: 50rem;
+  h1 {
+    text-align: center;
+  }
+  .divcol {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    .col {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      .caseinscription {
+        background-color: #f7dfae;
+        border: 3px, solid, #cab673;
+        border-radius: 19px;
+        width: 20rem;
+        height: 2rem;
+        text-align: center;
+      }
+    }
+  }
+  .btninscription {
+    background-color: #e96a25;
+    border: none;
+    border-radius: 19px;
+    width: 12rem;
+    margin: 20px;
+    .sinscrire {
+      color: white;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .fondinscription {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f0cd8c;
+    border-radius: 25px;
+    width: 17rem;
+    h1 {
+      text-align: center;
+    }
+    .divcol {
+      display: flex;
+      flex-direction: column;
+      .col {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .caseinscription {
+          background-color: #f7dfae;
+          border: 3px, solid, #cab673;
+          border-radius: 19px;
+          width: 15rem;
+          height: 2rem;
+          text-align: center;
+        }
+      }
+    }
+    .btninscription {
+      background-color: #e96a25;
+      border: none;
+      border-radius: 19px;
+      width: 12rem;
+      margin: 20px;
+      .sinscrire {
+        color: white;
+      }
+    }
+  }
+}

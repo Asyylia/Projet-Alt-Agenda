@@ -1,3 +1,4 @@
+
 class User {
   // Creation de l'objet
   constructor(pseudo, email, mdp) {
@@ -105,32 +106,33 @@ class App {
       const inputEmail = document.querySelector("#inputEmail").value;
       const inputMdp = document.querySelector("#inputMdp").value;
 
-      this.listofusers.forEach((user) => {
+      let isAuthentificated = false;
+
+      for (const user of this.listofusers) {
         // console.log(user)
-        let state = false;
-        if (state == false) {
-          if (this.checkLogin(user.email, user.mdp, inputEmail, inputMdp) === true) {
-            console.log(inputEmail)
-            console.log(inputMdp)
-            if (checkedbox) {
-              document.cookie = `email=${encodeURIComponent(inputEmail)}; max-age=${7 * 24 * 60 * 60}`;
-              document.cookie = `mdp=${encodeURIComponent(inputMdp)}; max-age=${7 * 24 * 60 * 60}`;
-            }
-            this.mainuser = user;
-            this.currentStep = 2;
-            this.renderStep();
-            console.log(user);
-            state = true;
-            return;
+
+        if (this.checkLogin(user.email, user.mdp, inputEmail, inputMdp)) {
+          if (checkedbox) {
+            document.cookie = `email=${encodeURIComponent(inputEmail)}; max-age=${7 * 24 * 60 * 60}`;
+            document.cookie = `mdp=${encodeURIComponent(inputMdp)}; max-age=${7 * 24 * 60 * 60}`;
           }
+          this.mainuser = user;
+          this.currentStep = 2;
+          this.renderStep();
+          isAuthentificated = true;
+          break;
         }
-
-      });
-
+      }
+      if (!isAuthentificated) {
+        console.log("Mot de passe incorrect")
+        alert('Mot de passe incorrect')
+      }
     });
 
+  };
 
-  }
+
+
 
   connect() {
     this.container.innerHTML = "";
@@ -141,13 +143,13 @@ class App {
     connectTxt.textContent = "Vous êtes connectés.";
 
     const returnaccueil = document.createElement("button");
-    returnaccueil.classList.add("btnco");
+    returnaccueil.classList.add("btnaccueil");
 
     const accueil = document.createElement("p");
     accueil.classList.add("accueil");
     accueil.textContent = "Retour à l'accueil";
 
-    pageco.appendChild(pagedeco);
+    // pageco.appendChild(pagedeco);
     pagedeco.appendChild(connectTxt);
     pagedeco.appendChild(returnaccueil);
     returnaccueil.appendChild(accueil);
@@ -173,3 +175,42 @@ class App {
 }
 
 new App("pageco");
+
+function createHeader() {
+  let header = document.getElementById('idheader')
+
+  const logo = document.createElement('img')
+  logo.src = "images/logo.png";
+  logo.classList.add("logo");
+
+  let nav = document.createElement('div')
+  nav.classList.add('nav')
+
+  let inscription = document.createElement('p')
+  inscription.classList.add("navbar-titre")
+  inscription.textContent = "Inscription"
+
+  let connexion = document.createElement('p')
+  connexion.classList.add('navbar-titre')
+  connexion.textContent = "Connexion"
+
+  const loupe = document.createElement('img')
+  loupe.src = "./images/loupe-search-svgrepo-com.png";
+  loupe.classList.add('emoticone-header');
+
+  const panier = document.createElement('img')
+  panier.src = "images/shopping-basket-supermarket-svgrepo-com.png";
+  panier.classList.add('emoticone-header');
+
+
+  header.appendChild(logo);
+  header.appendChild(nav)
+  nav.appendChild(inscription);
+  nav.appendChild(connexion);
+  nav.appendChild(loupe)
+  nav.appendChild(panier)
+
+
+}
+
+createHeader();

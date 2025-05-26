@@ -1,0 +1,19 @@
+#idheader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 100px;
+  .nav {
+    display: flex;
+    gap: 30px;
+    .navbar-titre {
+      font-family: "League Spartan";
+      font-size: 30px;
+    }
+    .emoticone-header {
+      width: 47px;
+      height: 47px;
+    }
+  }
+}

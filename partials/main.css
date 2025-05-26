@@ -52,14 +52,14 @@ main #pageco .divco .form {
   align-items: center;
   gap: 10px;
 }
-main #pageco .divco .form #email {
+main #pageco .divco .form #inputEmail {
   height: 1.7rem;
   width: 447px;
   background-color: #f7dfae;
   border: 3px solid #cab673;
   border-radius: 19px;
 }
-main #pageco .divco .form #mdp {
+main #pageco .divco .form #inputMdp {
   height: 1.7rem;
   width: 447px;
   background-color: #f7dfae;
@@ -86,6 +86,24 @@ main #pageco .divco .form .btnco .seco {
   font-family: "League Spartan";
   font-weight: 600;
   font-size: 30px;
+}
+
+.btnaccueil {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 57px;
+  width: 203px;
+  border: none;
+  background-color: #e96a25;
+  color: white;
+  border-radius: 19px;
+}
+.btnaccueil .accueil {
+  color: white;
+  font-family: "League Spartan";
+  font-weight: 600;
+  font-size: 25px;
 }
 
 .cookie-container {
@@ -126,4 +144,24 @@ main #pageco .divco .form .btnco .seco {
   border-radius: 0.4rem;
   font-family: "League Spartan";
   cursor: pointer;
+}
+
+#idheader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 100px;
+}
+#idheader .nav {
+  display: flex;
+  gap: 30px;
+}
+#idheader .nav .navbar-titre {
+  font-family: "League Spartan";
+  font-size: 30px;
+}
+#idheader .nav .emoticone-header {
+  width: 47px;
+  height: 47px;
 }
